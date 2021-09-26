@@ -1,5 +1,8 @@
+
+
 from nltk import sent_tokenize
 from nltk import word_tokenize
+from nltk.corpus import stopwords
 
 text = "Led ask possible mistress relation elegance eat likewise debating." \
        " By message or am nothing amongst chiefly address. The its enable direct" \
@@ -10,6 +13,13 @@ text = "Led ask possible mistress relation elegance eat likewise debating." \
 sents = sent_tokenize(text)
 print(sents)
 
-sent = "Led ask possible mistress relation elegance eat likewise debating."
+sent = "Respect invited request charmed me warrant to."
 words = word_tokenize(sent)
 print(words)
+
+print(stopwords.words('english'))
+
+stop_words = set(stopwords.words('english'))
+words = word_tokenize(sent)
+without_stop_words = [word for word in words if not word in stop_words]
+print(without_stop_words)
